@@ -5,8 +5,9 @@ import { table, minifyRecords } from './api/utils/airtable'
 import { TodosContext } from '../contexts/TodosContext'
 import { useContext } from 'react'
 import { useEffect } from 'react'
+import { getSession } from '@auth0/nextjs-auth0'
 
-const Home = ({ records }) => {
+const Home = ({ records, user }) => {
   const { todos, setTodos } = useContext(TodosContext);
   
   useEffect(() => {
@@ -19,7 +20,7 @@ const Home = ({ records }) => {
         <title>Next Js Airtable App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar user={user} />
       <main>
         <h1 className="text-6xl font-bold">
          Todo App
@@ -32,12 +33,16 @@ const Home = ({ records }) => {
 
 export default Home
 export async function getServerSideProps(context) {
+
+  const session = await getSession(context.req, context.res);
+
   try {
     const todoRows = await table.select({}).firstPage();
 
   return {
     props: {
-      records: minifyRecords(todoRows)
+      records: minifyRecords(todoRows),
+      user: session?.user || null
     },
     }
   } catch(err) {
