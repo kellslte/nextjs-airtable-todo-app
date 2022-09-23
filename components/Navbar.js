@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = ({user}) => {
   return (
     <nav className="flex justify-between items-center py-6">
-      <p className="text-2xl font-bold text-gray-800">My Todos</p>
+      <p className="text-2xl font-bold text-gray-800">Airtable Todo App</p>
       <div className="flex">
         {user && (
           <a

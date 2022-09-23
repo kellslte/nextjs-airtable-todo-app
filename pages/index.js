@@ -6,6 +6,7 @@ import { TodosContext } from '../contexts/TodosContext'
 import { useContext } from 'react'
 import { useEffect } from 'react'
 import { getSession } from '@auth0/nextjs-auth0'
+import TodoForm from '../components/TodoForm'
 
 const Home = ({ records, user }) => {
   const { todos, setTodos } = useContext(TodosContext);
@@ -22,10 +23,17 @@ const Home = ({ records, user }) => {
       </Head>
       <Navbar user={user} />
       <main>
-        <h1 className="text-6xl font-bold">
-         Todo App
-        </h1>
-        {todos && todos.map(todo => <Todo key={todo.id} todo={todo} />)}
+        {user && (
+          <>
+          <h1 className="text-2xl text-center mb-4">
+            My Todos
+          </h1>
+            <TodoForm />
+            <ul>
+            {todos && todos.map(todo => <Todo key={todo.id} todo={todo} />)}    
+            </ul>
+          </>
+        )}
       </main>
     </div>
   )
