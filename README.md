@@ -15,9 +15,9 @@ Cd into the directory and set it up with this command
 ```bash
 npm install
 ```
-Go to Airtable and create your base [![Airtable](https://airtable.com)](https://airtable.com)
+Go to Airtable and create your base [Airtable](https://airtable.com)
 
-Then head to Auth0 and create an app [![Autho](https://auth0.com)](https://auth0.com)
+Then head to Auth0 and create an app [Auth0](https://auth0.com)
 
 ## How to use
 
