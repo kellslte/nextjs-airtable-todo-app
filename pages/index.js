@@ -34,6 +34,7 @@ const Home = ({ records, user }) => {
             </ul>
           </>
         )}
+        {!user && <p>You should log in to save your todos</p>}
       </main>
     </div>
   )

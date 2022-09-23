@@ -1,6 +1,7 @@
 import { table, minifyRecord } from "./utils/airtable";
+import ownsRecord from './middleware/auth'
 
-export default async (req, res) => {
+export default ownsRecord(async (req, res) => {
   const { id } = req.body;
   try {
     const record = await table.destroy([id]);
@@ -10,4 +11,4 @@ export default async (req, res) => {
     res.statusCode = 500;
     res.json({ msg: "Something went wrong", err: err });
   }
-};
+});
