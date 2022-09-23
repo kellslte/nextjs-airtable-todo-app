@@ -1,27 +1,36 @@
-# Next.js + Tailwind CSS Example
+# Next.js + Tailwind CSS + Airtable + Auth0 App
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This app shows how to tie in Next.js with Airtable as its serverless backend. This is a simple todo app that users will log into to see their todos. Building it was fun and interesting.
 
-## Deploy your own
+## Setup
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+Clone the Repo
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+```bash
+git clone https://github.com/KellsLTE/nextjs-airtable-todo-app.git
+```
+
+Cd into the directory and set it up with this command
+
+```bash
+npm install
+```
+Go to Airtable and create your base [![Airtable](https://airtable.com)](https://airtable.com)
+
+Then head to Auth0 and create an app [![Autho](https://auth0.com)](https://auth0.com)
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Create your .env file and populate the fields you find in .env.example with the credentials you got from Airtable and Auth0
+
+Run your app
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+npm run dev
 ```
 
 ```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+yarn dev
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
